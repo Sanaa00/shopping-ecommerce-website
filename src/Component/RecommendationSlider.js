@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
-function RecommendationSlider({ products }) {
+import { AiOutlineHeart } from "react-icons/ai";
+function RecommendationSlider({ products, onBuyHandle }) {
   const settings = {
     dots: false,
     infinite: true,
@@ -20,10 +20,10 @@ function RecommendationSlider({ products }) {
         <Slider {...settings}>
           {products.map((product) => {
             return (
-              <div className="mx-4">
+              <div className="mx-4" key={product.id}>
                 <div
                   key={product.id}
-                  className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-xl  "
+                  className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-lg  "
                 >
                   <div className="flex flex-row  justify-between items-center mb-2 mt-6  px-4">
                     {" "}
@@ -41,7 +41,10 @@ function RecommendationSlider({ products }) {
                     />
                   </div>
                   <div className="flex flex-row justify-between items-center px-4 pb-2 mt-6">
-                    <button className="font-semibold text-spi bg-xanay hover:bg-rasasy rounded-full px-4 py-1 mb-2 shadow-xl">
+                    <button
+                      onClick={onBuyHandle}
+                      className="font-semibold text-spi bg-xanay hover:bg-rasasy rounded-full px-4 py-1 mb-2 shadow-xl"
+                    >
                       Buy
                     </button>
 

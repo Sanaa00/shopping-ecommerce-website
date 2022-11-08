@@ -28,14 +28,7 @@ function NavBar() {
             >
               Shop
             </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                (isActive ? "border-b-2 border-rash " : "") + "px-4 p-1"
-              }
-              to="/blog"
-            >
-              Blog
-            </NavLink>
+
             <NavLink
               className={({ isActive }) =>
                 (isActive ? "border-b-2 border-rash " : "") + "px-4 p-1"
@@ -45,7 +38,9 @@ function NavBar() {
               Contact
             </NavLink>
           </div>
-          <HiOutlineShoppingBag className="mx-6 w-7 h-7" />
+          <NavLink to="/shopbag">
+            <HiOutlineShoppingBag className="mx-6 w-7 h-7" />
+          </NavLink>
         </div>
       </div>
     </>
