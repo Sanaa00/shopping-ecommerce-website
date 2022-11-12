@@ -15,7 +15,7 @@ function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
   return (
     <>
       <div className=" bg-spi py-2 px-20">
-        <NavBar />{" "}
+        <NavBar shopItem={shopItem} />{" "}
         <p className="text-xl font-semibold text-rash px-20 my-10 ">
           Shopping Bag
         </p>
@@ -47,8 +47,7 @@ function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
                                   onClick={() => deleteButton(item)}
                                   className="flex flex-row items-center  "
                                 >
-                                  <RiDeleteBin6Line className="w-6 h-6 text-rash" />
-                                  {item.quantity}
+                                  <RiDeleteBin6Line className="w-6 h-6 text-rash transition ease-in-out delay-150   duration-300  hover:scale-125 " />
                                 </button>
                               </div>
                               <div className="flex flex-row justify-between items-center w-60">

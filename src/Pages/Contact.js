@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import Footer from "../Component/Footer";
 import FeildComponent from "../Component/FeildComponent";
-function Contact() {
+function Contact({ shopItem }) {
   const initialvalues = {
     name: "",
     email: "",
@@ -23,7 +23,7 @@ function Contact() {
   return (
     <>
       <div className=" bg-spi py-2 px-20">
-        <NavBar />
+        <NavBar shopItem={shopItem} />
         <div className="grid grid-cols-2 gap-10 justify-between   px-20">
           <img
             className="rounded-2xl  "
@@ -50,7 +50,7 @@ function Contact() {
                 <p className="text-rasasy font-semibold  mt-4">Message</p>
                 <Field
                   placeholder="your message "
-                  className="flex flex-row justify-start items-start w-4/5 h-10 rounded-2xl px-4 bg-rasasy bg-opacity-30  placeholder:text-white shadow-md mt-2  focus:bg-none focus:outline-none "
+                  className="flex flex-row justify-start items-start w-4/5 h-10 rounded-2xl px-4 bg-rasasy bg-opacity-30  placeholder:text-white shadow-md mt-2  focus:bg-none focus:outline-none transition ease-in-out delay-150   duration-300  hover:scale-110 "
                   type="textarea"
                   name="message"
                   row="4"
@@ -62,7 +62,7 @@ function Contact() {
                 <div>
                   <button
                     type="submit"
-                    className="bg-rasasy text-xl font-semibold  shadow-lg  text-spi px-10 py-2 rounded-full mt-6"
+                    className="bg-xanay text-xl font-semibold  shadow-lg  text-spi px-10 py-2 rounded-full mt-6 transition ease-in-out delay-150   duration-300  hover:-translate-y-1 hover:scale-105 "
                   >
                     Send
                   </button>

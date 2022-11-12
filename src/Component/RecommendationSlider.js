@@ -17,10 +17,10 @@ function RecommendationSlider({ products, onBuyHandle }) {
           {" "}
           Recomendations for today{" "}
         </h2>
-        <Slider {...settings}>
+        <Slider {...settings} className="">
           {products.map((product) => {
             return (
-              <div className="mx-4" key={product.id}>
+              <div className="mx-4 " key={product.id}>
                 <div
                   key={product.id}
                   className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-lg  "
@@ -43,7 +43,7 @@ function RecommendationSlider({ products, onBuyHandle }) {
                   <div className="flex flex-row justify-between items-center px-4 pb-2 mt-6">
                     <button
                       onClick={onBuyHandle}
-                      className="font-semibold text-spi bg-xanay hover:bg-rasasy rounded-full px-4 py-1 mb-2 shadow-xl"
+                      className="font-semibold text-spi bg-xanay hover:bg-rasasy rounded-full px-4 py-1 mb-2 shadow-xl transition ease-in-out delay-150  duration-300"
                     >
                       Buy
                     </button>

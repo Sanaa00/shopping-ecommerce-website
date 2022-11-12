@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { SpinnerRoundFilled } from "spinners-react";
-function PaginationShop({ products, onBuyHandle }) {
+function PaginationShop({ products, onBuyHandle, shopItem }) {
   function filterHandle(category) {
     const result = products.filter((currentDate) => {
       return currentDate.category === category;
@@ -14,7 +14,11 @@ function PaginationShop({ products, onBuyHandle }) {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const [itemsPerPage, setItemsPerPage] = useState(8);
+  const [save, setSave] = useState(false);
 
+  // const saveHandle = (product) => {
+  //   setSave(!save) ? product === product.id : save;
+  // };
   useEffect(() => {
     /* calculations for the react paginate */
 
@@ -52,31 +56,31 @@ function PaginationShop({ products, onBuyHandle }) {
     <div>
       <div className="flex flex-row  justify-start mx-20  text-md text-spi mb-5 ">
         <button
-          className="rounded-full bg-xanay px-4 py-1 mr-4 hover:bg-rasasy shadow-lg  "
+          className="rounded-full bg-xanay px-4 py-1 mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300 "
           onClick={() => setCurrentItems(products)}
         >
           All
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mr-4 hover:bg-rasasy shadow-lg  "
+          className="rounded-full bg-xanay px-4 py-1 mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("electronics")}
         >
           Electronics
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy  shadow-lg"
+          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy  shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("jewelery")}
         >
           Jewelery
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy shadow-lg "
+          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("men's clothing")}
         >
           Men
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy shadow-lg "
+          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("women's clothing")}
         >
           Momen
@@ -88,17 +92,15 @@ function PaginationShop({ products, onBuyHandle }) {
           return (
             <div
               key={product.id}
-              className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-2xl "
+              className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-300"
             >
               <div className="flex flex-row  justify-between items-center mb-2 mt-6  px-4">
-                {" "}
                 <h2 className="text-l font-medium   ">
                   {product.title.slice(0, 10)}
                 </h2>
                 <h2 className="text-l font-medium">{product.price}$</h2>
               </div>
               <div className="flex justify-center items-center">
-                {" "}
                 <img
                   alt="product"
                   src={product.image}
@@ -107,14 +109,24 @@ function PaginationShop({ products, onBuyHandle }) {
               </div>
               <div className="flex flex-row justify-between items-center px-4 pb-2 mt-6">
                 <button
-                  onClick={onBuyHandle}
-                  className="font-semibold text-spi bg-xanay hover:bg-rasasy rounded-full px-4 py-1 mb-2 shadow-xl"
+                  onClick={() => onBuyHandle(product)}
+                  className="font-semibold text-spi bg-xanay hover:bg-rasasy rounded-full px-4 py-1 mb-2 shadow-xl  transition ease-in-out delay-150  duration-300"
                 >
                   Buy
                 </button>
 
-                <button onClick={() => {}} className="flex justify-end  mb-2">
-                  <AiFillHeart className="w-6 h-6" />
+                <button
+                  onClick={(product) => {
+                    setSave(!save);
+                  }}
+                  className="flex justify-end  mb-2"
+                >
+                  {product.id}
+                  {save ? (
+                    <AiFillHeart className="w-6 h-6" />
+                  ) : (
+                    <AiOutlineHeart className="w-6 h-6" />
+                  )}
                 </button>
               </div>
             </div>
