@@ -6,7 +6,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
   return (
     <>
-      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20">
+      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20 2xl:h-screen">
         <NavBar shopItem={shopItem} />{" "}
         <p className="text-xl font-semibold text-rash xl:px-20 my-10 ">
           Shopping Bag

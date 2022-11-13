@@ -22,12 +22,12 @@ function Contact({ shopItem }) {
   });
   return (
     <>
-      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20">
+      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20 2xl:h-screen">
         <NavBar shopItem={shopItem} />
         <div className="grid md:grid-cols-2 gap-10 justify-between items-center sm:px-20 md:px-0">
           <div className="flex justify-center items-center">
             <img
-              className="rounded-2xl  mt-10 sm:mt-0 xl:ml-12  "
+              className="rounded-2xl  mt-10 sm:mt-0 xl:ml-12 2xl:ml-0  "
               alt="contact"
               src="https://images.unsplash.com/photo-1647201097511-c9059be8d82d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
             />
