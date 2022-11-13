@@ -46,7 +46,7 @@ function NavBar({ shopItem }) {
           onClick={onNavbarHandler}
         ></div>
       )}
-      <div className="hidden sm:flex flex-row items-center justify-between bg-white text-rash bg-opacity-80 shadow-lg rounded-full lg:text-xl font-semibold p-4 my-10 lg:mx-20">
+      <div className="hidden sm:flex flex-row items-center justify-between bg-white text-rash bg-opacity-80 shadow-lg rounded-full lg:text-xl font-semibold p-4 my-10 xl:mx-20">
         <div className="hidden sm:inline-block px-4">
           <p className="hidden sm:inline-block">Free Shopping</p>
         </div>

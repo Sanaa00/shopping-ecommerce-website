@@ -5,7 +5,7 @@ import { BsTwitter } from "react-icons/bs";
 function Footer() {
   return (
     <>
-      <div className="text-sm sm:text-lg grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-10  justify-start bg-spi px-6 sm:px-12  lg:px-40 text-rash  font-semibold py-10 sm:py-20">
+      <div className="text-sm sm:text-lg grid grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-10  justify-start bg-spi px-6 sm:px-12  lg:px-16 xl:px-40 text-rash  font-semibold py-10 sm:py-20">
         <div className=" lg:w-40">
           <div>
             our office are locaten in the Kurdistan-Erbil,Sulaymaniah ,Duhok{" "}

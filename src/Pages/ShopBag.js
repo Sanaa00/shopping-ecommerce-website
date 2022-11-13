@@ -6,12 +6,12 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
   return (
     <>
-      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-20">
+      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20">
         <NavBar shopItem={shopItem} />{" "}
-        <p className="text-xl font-semibold text-rash lg:px-20 my-10 ">
+        <p className="text-xl font-semibold text-rash xl:px-20 my-10 ">
           Shopping Bag
         </p>
-        <div className="flex flex-col justify-between lg:px-20">
+        <div className="flex flex-col justify-between xl:px-20">
           <div>
             {shopItem.length === 0 && (
               <div className="h-96 text-xanay sm:text-5xl  font-semibold flex justify-center items-center">
@@ -23,7 +23,7 @@ function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
             {shopItem.length !== 0 && (
               <div className="flex flex-col lg:flex-row justify-between items-center ">
                 <div className="lg:w-2/3">
-                  <div className=" bg-white rounded-3xl  p-6 lg:mr-20 shadow-xl">
+                  <div className=" bg-white rounded-3xl  p-6 xl:mr-20 shadow-xl">
                     {shopItem.map((item) => {
                       return (
                         <div className="">

@@ -4,10 +4,10 @@ import NavBar from "../Component/NavBar";
 function Home({ shopItem }) {
   return (
     <>
-      <div className="h-screen bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-20">
+      <div className="h-screen bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20">
         <NavBar shopItem={shopItem} />
 
-        <div className="flex flex-col justify-between md:w-1/2 mt-10 sm:mt-0 md:px-10 lg:px-20">
+        <div className="flex flex-col justify-between md:w-1/2 mt-10 sm:mt-0 md:px-10 xl:px-20">
           <p className="text-rash text-4xl sm:text-6xl md:text-4xl font-semibold">
             Decent light. Awesome life
           </p>
@@ -19,7 +19,7 @@ function Home({ shopItem }) {
             Add to cart
           </button>
         </div>
-        <div className="grid md:grid-cols-2 gap-x-5 md:px-10 lg:px-20 sm:w-1/2 md:w-full mt-20 sm:mt-10 lg:mt-20 justify-between">
+        <div className="grid md:grid-cols-2 gap-x-5 md:px-10 xl:px-20 sm:w-1/2 md:w-full mt-20 sm:mt-10 lg:mt-20 justify-between">
           <div className="">
             <p className="text-rash text-2xl font-semibold">Durability</p>
             <p className="text-rasasy text-lg mt-5">

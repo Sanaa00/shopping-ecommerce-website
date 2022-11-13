@@ -56,7 +56,7 @@ function PaginationShop({ products, onBuyHandle }) {
 
   return (
     <div>
-      <div className="grid grid-cols-3 sm:flex sm:flex-row  justify-start lg:mx-20  text-md text-spi mb-5 ">
+      <div className="grid grid-cols-3 sm:flex sm:flex-row  justify-start xl:mx-20  text-md text-spi mb-5 ">
         <button
           className="rounded-full bg-xanay mx-1 sm:px-4 py-1 sm:mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300 "
           onClick={() => setCurrentItems(products)}
@@ -89,12 +89,12 @@ function PaginationShop({ products, onBuyHandle }) {
         </button>
       </div>
 
-      <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  sm:mt-6 md:mt-0  gap-10 sm:gap-x-16 lg:gap-10 grid-rows-2 lg:mx-20  justify-center sm:items-center">
+      <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  sm:mt-6 md:mt-0  gap-10 sm:gap-x-16 lg:gap-10 grid-rows-2 xl:mx-20  justify-center sm:items-center">
         {currentItems.map((product) => {
           return (
             <div
               key={product.id}
-              className="bg-white rounded-2xl mb-5 w-60 md:w-48 lg:w-60 flex flex-col justify-start  shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-300"
+              className="bg-white rounded-2xl mb-5 w-60 md:w-48 xl:w-60 flex flex-col justify-start  shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-300"
             >
               <div className="flex flex-row  justify-between items-center mb-2 mt-6  px-4">
                 <h2 className="text-l font-medium   ">

@@ -22,7 +22,7 @@ function Contact({ shopItem }) {
   });
   return (
     <>
-      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-20">
+      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20">
         <NavBar shopItem={shopItem} />
         <div className="grid md:grid-cols-2 gap-10 justify-between  sm:px-20 md:px-0">
           <div className="flex justify-center items-center">
