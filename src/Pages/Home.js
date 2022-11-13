@@ -8,10 +8,10 @@ function Home({ shopItem }) {
         <NavBar shopItem={shopItem} />
 
         <div className="flex flex-col justify-between md:w-1/2 mt-10 sm:mt-0 md:px-10 xl:px-20">
-          <p className="text-rash text-4xl sm:text-6xl md:text-4xl font-semibold">
+          <p className="text-rash text-4xl sm:text-6xl md:text-4xl xl:text-6xl font-semibold">
             Decent light. Awesome life
           </p>
-          <p className="text-rasasy w-4/5 sm:w-full text-xl sm:text-2xl md:text-xl mt-10">
+          <p className="text-rasasy w-4/5 sm:w-full text-xl sm:text-2xl md:text-xl xl:text-2xl mt-10">
             the best quality lamps with excellent lighting and long service
             life.
           </p>
@@ -19,7 +19,7 @@ function Home({ shopItem }) {
             Add to cart
           </button>
         </div>
-        <div className="grid md:grid-cols-2 gap-x-5 md:px-10 xl:px-20 sm:w-1/2 md:w-full mt-20 sm:mt-10 lg:mt-20 justify-between">
+        <div className="grid md:grid-cols-2 gap-x-5 md:px-10 xl:px-20 sm:w-1/2 md:w-full xl:w-2/3 mt-20 sm:mt-10 lg:mt-20 justify-between">
           <div className="">
             <p className="text-rash text-2xl font-semibold">Durability</p>
             <p className="text-rasasy text-lg mt-5">

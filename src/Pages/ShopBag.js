@@ -104,8 +104,8 @@ function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
             )}
           </div>
         </div>
-        <Footer />
-      </div>
+      </div>{" "}
+      <Footer />
     </>
   );
 }
