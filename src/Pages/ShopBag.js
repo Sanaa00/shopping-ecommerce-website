@@ -6,12 +6,12 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
   return (
     <>
-      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-20">
+      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-20">
         <NavBar shopItem={shopItem} />{" "}
-        <p className="text-xl font-semibold text-rash md:px-20 my-10 ">
+        <p className="text-xl font-semibold text-rash lg:px-20 my-10 ">
           Shopping Bag
         </p>
-        <div className="flex flex-col justify-between md:px-20">
+        <div className="flex flex-col justify-between lg:px-20">
           <div>
             {shopItem.length === 0 && (
               <div className="h-96 text-xanay sm:text-5xl  font-semibold flex justify-center items-center">
@@ -21,9 +21,9 @@ function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
           </div>
           <div className="">
             {shopItem.length !== 0 && (
-              <div className="flex flex-col md:flex-row justify-between items-center ">
-                <div className="md:w-2/3">
-                  <div className=" bg-white rounded-3xl  p-6 md:mr-20 shadow-xl">
+              <div className="flex flex-col lg:flex-row justify-between items-center ">
+                <div className="lg:w-2/3">
+                  <div className=" bg-white rounded-3xl  p-6 lg:mr-20 shadow-xl">
                     {shopItem.map((item) => {
                       return (
                         <div className="">
@@ -86,7 +86,7 @@ function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
                     })}
                   </div>
                 </div>
-                <div className=" flex flex-col w-3/4 md:w-1/3 bg-white h-fit md:ml-20 p-10 rounded-2xl shadow-xl my-10 md:mt-0">
+                <div className=" flex flex-col w-3/4 lg:w-1/3 bg-white h-fit lg:ml-20 p-10 rounded-2xl shadow-xl my-10 lg:mt-0">
                   <div className="flex flex-row justify-between w-full">
                     <p className="text-lg font-medium  text-rash  ">Products</p>
                     <p className="text-lg font-medium  text-rash ">

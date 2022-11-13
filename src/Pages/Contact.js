@@ -22,9 +22,9 @@ function Contact({ shopItem }) {
   });
   return (
     <>
-      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-20">
+      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-20">
         <NavBar shopItem={shopItem} />
-        <div className="grid md:grid-cols-2 gap-10 justify-between  sm:px-20">
+        <div className="grid md:grid-cols-2 gap-10 justify-between  sm:px-20 md:px-0">
           <div className="flex justify-center items-center">
             <img
               className="rounded-2xl  mt-10 sm:mt-0  "
@@ -35,7 +35,7 @@ function Contact({ shopItem }) {
 
           <div className="flex flex-col justify-start ">
             <div>
-              <p className="text-2xl font-semibold text-rash  md:ml-10">
+              <p className="text-2xl font-semibold text-rash  lg:ml-10">
                 Contact us
               </p>
             </div>
@@ -44,7 +44,7 @@ function Contact({ shopItem }) {
               onSubmit={onSubmit}
               validationSchema={validationSchema}
             >
-              <Form className="md:ml-10">
+              <Form className="lg:ml-10">
                 <FeildComponent name="name" type="text" label="Name" />
 
                 <FeildComponent name="email" type="email" label="Email" />
