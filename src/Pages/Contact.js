@@ -22,17 +22,20 @@ function Contact({ shopItem }) {
   });
   return (
     <>
-      <div className=" bg-spi py-2 px-20">
+      <div className=" bg-spi py-6 sm:py-2 px-6 md:px-20">
         <NavBar shopItem={shopItem} />
-        <div className="grid grid-cols-2 gap-10 justify-between   px-20">
-          <img
-            className="rounded-2xl  "
-            alt="contact"
-            src="https://images.unsplash.com/photo-1647201097511-c9059be8d82d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
-          />
+        <div className="grid md:grid-cols-2 gap-10 justify-between  sm:px-20">
+          <div className="flex justify-center items-center">
+            <img
+              className="rounded-2xl  mt-10 sm:mt-0  "
+              alt="contact"
+              src="https://images.unsplash.com/photo-1647201097511-c9059be8d82d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+            />
+          </div>
+
           <div className="flex flex-col justify-start ">
             <div>
-              <p className="text-2xl font-semibold text-rash  ml-10">
+              <p className="text-2xl font-semibold text-rash  md:ml-10">
                 Contact us
               </p>
             </div>
@@ -41,7 +44,7 @@ function Contact({ shopItem }) {
               onSubmit={onSubmit}
               validationSchema={validationSchema}
             >
-              <Form className="ml-10">
+              <Form className="md:ml-10">
                 <FeildComponent name="name" type="text" label="Name" />
 
                 <FeildComponent name="email" type="email" label="Email" />
@@ -50,7 +53,7 @@ function Contact({ shopItem }) {
                 <p className="text-rasasy font-semibold  mt-4">Message</p>
                 <Field
                   placeholder="your message "
-                  className="flex flex-row justify-start items-start w-4/5 h-10 rounded-2xl px-4 bg-rasasy bg-opacity-30  placeholder:text-white shadow-md mt-2  focus:bg-none focus:outline-none transition ease-in-out delay-150   duration-300  hover:scale-110 "
+                  className="flex flex-row justify-start sm:items-start w-4/5  h-10 rounded-2xl px-4 bg-rasasy bg-opacity-30  placeholder:text-white shadow-md mt-2  focus:bg-none focus:outline-none transition ease-in-out delay-150   duration-300  hover:scale-110 "
                   type="textarea"
                   name="message"
                   row="4"
@@ -62,7 +65,7 @@ function Contact({ shopItem }) {
                 <div>
                   <button
                     type="submit"
-                    className="bg-xanay text-xl font-semibold  shadow-lg  text-spi px-10 py-2 rounded-full mt-6 transition ease-in-out delay-150   duration-300  hover:-translate-y-1 hover:scale-105 "
+                    className="bg-xanay text-lg sm:text-xl font-semibold  shadow-lg  text-spi px-10 py-2 rounded-full mt-6 transition ease-in-out delay-150   duration-300  hover:-translate-y-1 hover:scale-105 "
                   >
                     Send
                   </button>
@@ -71,8 +74,8 @@ function Contact({ shopItem }) {
             </Formik>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

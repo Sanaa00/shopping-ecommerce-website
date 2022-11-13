@@ -2,29 +2,48 @@ import React from "react";
 import Slider from "react-slick";
 import { AiOutlineHeart } from "react-icons/ai";
 function RecommendationSlider({ products, onBuyHandle }) {
+  const slideToshoww = () => {
+    if (window.innerWidth < 640) {
+      return 1;
+    } else if (window.innerWidth < 768) {
+      return 3;
+    } else {
+      return 4;
+    }
+  };
+  const slideToscrolll = () => {
+    if (window.innerWidth < 640) {
+      return 1;
+    } else {
+      return 3;
+    }
+  };
   const settings = {
     dots: false,
     infinite: true,
     speed: 700,
-    slidesToShow: 4.4,
-    slidesToScroll: 3,
+    slidesToShow: { slideToshoww },
+    slidesToScroll: { slideToscrolll },
     arrows: false,
   };
   return (
     <>
       <div>
-        <h2 className="mb-10 text-xl font-semibold text-rash px-20">
-          {" "}
-          Recomendations for today{" "}
+        <h2 className="mb-10 text-xl font-semibold text-rash md:px-20">
+          Recomendations for today
         </h2>
-        <Slider {...settings} className="">
+
+        <Slider
+          {...settings}
+          className="flex flex-row justify-center items-center"
+        >
           {products.map((product) => {
             return (
-              <div className="mx-4 " key={product.id}>
-                <div
-                  key={product.id}
-                  className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-lg  "
-                >
+              <div
+                key={product.id}
+                className=" sm:mx-4 flex flex-row justify-center items-center"
+              >
+                <div className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-lg ">
                   <div className="flex flex-row  justify-between items-center mb-2 mt-6  px-4">
                     {" "}
                     <h2 className="text-l font-medium   ">

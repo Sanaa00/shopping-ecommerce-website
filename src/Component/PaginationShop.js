@@ -2,40 +2,40 @@ import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { SpinnerRoundFilled } from "spinners-react";
-function PaginationShop({ products, onBuyHandle, shopItem }) {
+function PaginationShop({ products, onBuyHandle }) {
   function filterHandle(category) {
     const result = products.filter((currentDate) => {
       return currentDate.category === category;
     });
     setCurrentItems(result);
   }
+  const itemPerPageWindowSize = () => {
+    if (window.innerWidth < 640) {
+      return 2;
+    } else if (window.innerWidth < 768) {
+      return 4;
+    } else {
+      return 8;
+    }
+  };
   const [isLoading, setIsLoading] = useState(true);
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(8);
+  const [itemsPerPage, setItemsPerPage] = useState(itemPerPageWindowSize);
   const [save, setSave] = useState(false);
 
-  // const saveHandle = (product) => {
-  //   setSave(!save) ? product === product.id : save;
-  // };
   useEffect(() => {
-    /* calculations for the react paginate */
-
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(products.slice(itemOffset, endOffset));
     setIsLoading(false);
-    console.log("current items:", currentItems);
     setPageCount(Math.ceil(products.length / itemsPerPage));
   }, [itemOffset, itemsPerPage, products]);
 
-  // Invoke when user click to request another page.
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % products.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
+
     setItemOffset(newOffset);
   };
 
@@ -54,45 +54,45 @@ function PaginationShop({ products, onBuyHandle, shopItem }) {
 
   return (
     <div>
-      <div className="flex flex-row  justify-start mx-20  text-md text-spi mb-5 ">
+      <div className="grid grid-cols-3 sm:flex sm:flex-row  justify-start md:mx-20  text-md text-spi mb-5 ">
         <button
-          className="rounded-full bg-xanay px-4 py-1 mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300 "
+          className="rounded-full bg-xanay mx-1 sm:px-4 py-1 sm:mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300 "
           onClick={() => setCurrentItems(products)}
         >
           All
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
+          className="rounded-full bg-xanay sm:px-4 mx-1 py-1 sm:mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("electronics")}
         >
           Electronics
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy  shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
+          className="rounded-full bg-xanay sm:px-4 py-1 mx-1 sm:mx-4 hover:bg-rasasy  shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("jewelery")}
         >
           Jewelery
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
+          className="rounded-full bg-xanay sm:px-4 py-1 mx-1 mt-4 sm:mt-0 sm:mx-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("men's clothing")}
         >
           Men
         </button>
         <button
-          className="rounded-full bg-xanay px-4 py-1 mx-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
+          className="rounded-full bg-xanay sm:px-4 py-1 mx-1  mt-4 sm:mt-0  sm:mx-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300"
           onClick={() => filterHandle("women's clothing")}
         >
           Momen
         </button>
       </div>
 
-      <div className="grid grid-cols-4  gap-10 grid-rows-2 mx-20  items-center">
+      <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-4  sm:mt-6 md:mt-0  gap-10 sm:gap-x-16 md:gap-10 grid-rows-2 md:mx-20  justify-center sm:items-center">
         {currentItems.map((product) => {
           return (
             <div
               key={product.id}
-              className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-300"
+              className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start  shadow-2xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-300"
             >
               <div className="flex flex-row  justify-between items-center mb-2 mt-6  px-4">
                 <h2 className="text-l font-medium   ">
@@ -116,12 +116,11 @@ function PaginationShop({ products, onBuyHandle, shopItem }) {
                 </button>
 
                 <button
-                  onClick={(product) => {
+                  onClick={() => {
                     setSave(!save);
                   }}
                   className="flex justify-end  mb-2"
                 >
-                  {product.id}
                   {save ? (
                     <AiFillHeart className="w-6 h-6" />
                   ) : (
@@ -132,14 +131,13 @@ function PaginationShop({ products, onBuyHandle, shopItem }) {
             </div>
           );
         })}
-        {/* pagination component here */}
       </div>
 
       <div className="container mx-auto flex justify-center my-10">
         <ReactPaginate
           breakLabel="..."
           onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
+          pageRangeDisplayed={2}
           pageCount={pageCount}
           className="flex"
           previousLabel={false}
