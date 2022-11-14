@@ -56,7 +56,7 @@ function PaginationShop({ products, onBuyHandle }) {
 
   return (
     <div>
-      <div className="grid grid-cols-3 sm:flex sm:flex-row  justify-start xl:mx-20  text-md text-spi mb-5 ">
+      <div className="grid grid-cols-3  text-xs sm:text-md sm:flex sm:flex-row  justify-start xl:mx-20  text-md text-spi mb-5 ">
         <button
           className="rounded-full bg-xanay mx-1 sm:px-4 py-1 sm:mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300 "
           onClick={() => setCurrentItems(products)}
@@ -89,7 +89,7 @@ function PaginationShop({ products, onBuyHandle }) {
         </button>
       </div>
 
-      <div className="grid grid-cols-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  sm:mt-6 md:mt-0  gap-10 sm:gap-x-16 lg:gap-10 grid-rows-2 xl:mx-20  justify-center sm:items-center">
+      <div className="grid grid-cols-1s sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  sm:mt-6 md:mt-0  gap-10 sm:gap-x-16 lg:gap-10 grid-rows-2 xl:mx-20  justify-center items-center">
         {currentItems.map((product) => {
           return (
             <div

@@ -35,13 +35,13 @@ function RecommendationSlider({ products, onBuyHandle }) {
 
         <Slider
           {...settings}
-          className="flex flex-row justify-center items-center"
+          className="grid grid-rows-1 justify-center items-center"
         >
           {products.map((product) => {
             return (
               <div
                 key={product.id}
-                className=" sm:mx-4 flex flex-row justify-center items-center"
+                className=" sm:mx-4 grid grid-rows-1 justify-center items-center"
               >
                 <div className="bg-white rounded-2xl mb-5 w-60 flex flex-col justify-start shadow-lg ">
                   <div className="flex flex-row  justify-between items-center mb-2 mt-6  px-4">
