@@ -49,8 +49,8 @@ function NavBar({ shopItem }) {
         <div
           className={` ${
             open
-              ? "hidden"
-              : "  rounded-sm sm:hidden flex flex-col fixed bg-gray-50 w-3/5  top-0 z-40 left-0 shadow-lg"
+              ? "  rounded-sm sm:hidden flex flex-col fixed bg-gray-50 w-3/5  top-0 z-40 left-0 shadow-lg"
+              : "hidden"
           }`}
         >
           <div className=" flex pl-2 h-28  ">
