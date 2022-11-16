@@ -4,6 +4,10 @@ import NavBar from "../Component/NavBar";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
 function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
+  let sum = 0;
+
+  shopItem.reduce((_, current) => (sum += current.price * current.quantity), 0);
+
   return (
     <>
       <div className="min-h-screen  bg-spi py-6 sm:py-2 px-6 md:px-10 lg:px-16 xl:px-20 ">
@@ -95,11 +99,13 @@ function ShopBag({ shopItem, deleteHandle, onBuyHandle, deleteButton }) {
                       {shopItem.length}
                     </p>
                   </div>
-                  <div className="flex flex-row my-6">
+                  <div className="flex flex-row justify-between items-center my-6">
                     <p className="text-s sm:text-lg font-medium  text-rash ">
                       Total price
                     </p>
-                    <p></p>
+                    <p className="text-s sm:text-lg font-medium  text-rash">
+                      {sum.toFixed(2)}$
+                    </p>
                   </div>
                 </div>
               </div>

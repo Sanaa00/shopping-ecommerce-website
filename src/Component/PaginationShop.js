@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
-import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { SpinnerRoundFilled } from "spinners-react";
+
 function PaginationShop({ products, onBuyHandle }) {
-  function filterHandle(category) {
-    const result = products.filter((currentDate) => {
-      return currentDate.category === category;
-    });
-    setCurrentItems(result);
-  }
   const itemPerPageWindowSize = () => {
     if (window.innerWidth < 640) {
       return 2;
@@ -22,24 +16,39 @@ function PaginationShop({ products, onBuyHandle }) {
   };
   const [isLoading, setIsLoading] = useState(true);
   const [currentItems, setCurrentItems] = useState(null);
+
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(itemPerPageWindowSize);
-  const [save, setSave] = useState(false);
+  const itemsPerPage = itemPerPageWindowSize();
+
+  const endOffset = itemOffset + itemsPerPage;
 
   useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(products.slice(itemOffset, endOffset));
-    setIsLoading(false);
     setPageCount(Math.ceil(products.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, products]);
+    setIsLoading(false);
+  }, [endOffset, itemOffset, itemsPerPage, products]);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % products.length;
 
     setItemOffset(newOffset);
   };
+
+  function filterHandle(category) {
+    let result = [];
+
+    if (category === "all") {
+      setCurrentItems(products.slice(itemOffset, endOffset));
+      setPageCount(Math.ceil(products.length / itemsPerPage));
+    } else {
+      result = products.filter(
+        (currentDate) => currentDate.category === category
+      );
+
+      setCurrentItems(result);
+    }
+  }
 
   if (isLoading) {
     return (
@@ -59,7 +68,7 @@ function PaginationShop({ products, onBuyHandle }) {
       <div className="grid grid-cols-3  text-xs sm:text-md sm:flex sm:flex-row  justify-start xl:mx-20  text-md text-spi mb-5 ">
         <button
           className="rounded-full bg-xanay mx-1 sm:px-4 py-1 sm:mr-4 hover:bg-rasasy shadow-lg  transition ease-in-out delay-150 hover:-translate-y-1   duration-300 "
-          onClick={() => setCurrentItems(products)}
+          onClick={() => filterHandle("all")}
         >
           All
         </button>
@@ -115,19 +124,6 @@ function PaginationShop({ products, onBuyHandle }) {
                   className="font-semibold text-spi bg-xanay hover:bg-rasasy rounded-full px-4 py-1 mb-2 shadow-xl  transition ease-in-out delay-150  duration-300"
                 >
                   Buy
-                </button>
-
-                <button
-                  onClick={() => {
-                    setSave(!save);
-                  }}
-                  className="flex justify-end  mb-2"
-                >
-                  {save ? (
-                    <AiFillHeart className="w-6 h-6" />
-                  ) : (
-                    <AiOutlineHeart className="w-6 h-6" />
-                  )}
                 </button>
               </div>
             </div>
