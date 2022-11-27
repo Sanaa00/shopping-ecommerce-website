@@ -41,16 +41,18 @@ function NavBar({ shopItem }) {
   return (
     <>
       <div className=" flex flex-row items-center justify-between bg-white text-rash bg-opacity-80 shadow-lg rounded-full lg:text-xl 2xl:text-2xl font-semibold p-4 my-10 xl:mx-20">
-        <div className="hidden sm:block px-4 ">Free Shoping</div>
+        <NavLink to="/" className="hidden sm:block px-4 ">
+          Free Shoping
+        </NavLink>
         <button onClick={() => setOpen(!open)}>
           <FiMenu className="sm:hidden mx-6 h-5 w-5 " />
         </button>{" "}
-        <div className="sm:hidden block px-4 ">Free Shoping</div>
+        <NavLink to="/" className="sm:hidden block px-4 ">
+          Free Shoping
+        </NavLink>
         <div
-          className={` ${
-            open
-              ? "  rounded-sm sm:hidden flex flex-col fixed bg-gray-50 w-3/5  top-0 z-40 left-0 shadow-lg"
-              : "hidden"
+          className={`rounded-sm sm:hidden flex flex-col fixed bg-gray-50 w-3/5  top-0 z-40 left-0 shadow-lg transform duration-500 ease-in-out ${
+            open ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           <div className=" flex pl-2 h-28  ">
@@ -87,7 +89,7 @@ function NavBar({ shopItem }) {
             to="/"
             className={({ isActive }) =>
               (isActive ? "border-b-2 border-rash " : "") +
-              "  sm:px-2 md:px-4 p-1"
+              "  sm:px-2 md:px-4 p-1 transition ease-in-out delay-150  duration-300   hover:scale-110"
             }
             end
           >
@@ -96,7 +98,7 @@ function NavBar({ shopItem }) {
           <NavLink
             className={({ isActive }) =>
               (isActive ? "border-b-2 border-rash " : "") +
-              " sm:px-2 md:px-4 p-1"
+              " sm:px-2 md:px-4 p-1 transition ease-in-out delay-150  duration-300   hover:scale-110"
             }
             to="/shop"
           >
@@ -105,7 +107,7 @@ function NavBar({ shopItem }) {
           <NavLink
             className={({ isActive }) =>
               (isActive ? "border-b-2 border-rash  " : "") +
-              "  sm:px-2 md:px-4 p-1"
+              "  sm:px-2 md:px-4 p-1 transition ease-in-out delay-150  duration-300   hover:scale-110"
             }
             to="/contact"
           >
