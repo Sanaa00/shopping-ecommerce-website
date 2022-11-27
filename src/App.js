@@ -5,8 +5,7 @@ import axios from "axios";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import Shop from "./Pages/Shop";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import ShopBag from "./Pages/ShopBag";
 function App() {
   const [products, setProducts] = useState([]);
